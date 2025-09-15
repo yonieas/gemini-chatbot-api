@@ -63,6 +63,11 @@ function appendMessage(sender, text, extraClass = '') {
     msg.textContent = text; // For user messages or if marked is not loaded
   }
   chatBox.appendChild(msg);
-  chatBox.scrollTop = chatBox.scrollHeight;
+  // Smooth scroll to bottom for new messages
+  chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
+  // Refocus input for fast chatting
+  if (document.activeElement !== input) {
+    input.focus();
+  }
   return msg; // Return the message element so it can be removed later
 }

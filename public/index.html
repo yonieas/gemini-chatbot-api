@@ -14,14 +14,16 @@
 </head>
 <body>
     <!-- ... your other HTML content ... -->
-    <div id="container">
-      <h1>Gemini AI Chatbot</h1>
-        <div id="chat-box" class="chat-box"></div>
-        <form id="chat-form">
-            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
-            <button type="submit">Send</button>
-        </form>
-    </div>
+        <main class="container" id="container" role="main">
+            <header class="chat-header">
+                <h1>Gemini AI Chatbot</h1>
+            </header>
+            <section id="chat-box" class="chat-box" aria-live="polite" aria-label="Chat conversation"></section>
+            <form id="chat-form" class="chat-form" autocomplete="off" aria-label="Send a message">
+                <input type="text" id="user-input" placeholder="Type your message..." aria-label="Type your message" required autofocus>
+                <button type="submit" aria-label="Send message">Send</button>
+            </form>
+        </main>
 
     <script src="script.js"></script>
 </body>
